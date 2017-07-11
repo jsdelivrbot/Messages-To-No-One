@@ -15,6 +15,9 @@ const pool = new Pool({
 var express = require('express');
 var app = express();
 
+var conversation = require('./handle/conversation.js');
+
+
 var bodyParser = require('body-parser');
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies from Brother Burton's code
@@ -39,14 +42,6 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
-//conversation.addConversation
-app.post('/addConversation', function addConversation(request, response) {
-	
-	var name = request.body.name;
-	var user = request.body.user;
-	console.log("added a conversation with the name " + name);
-	if(name){
-		pool.query('INSERT INTO conversation("name", "users") VALUES ($1, $2)', [name, user] );
-	}
-} );
+
+app.post('/addConversation', conversation.addConversation);
 
