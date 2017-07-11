@@ -16,6 +16,8 @@ var express = require('express');
 var app = express();
 
 var conversation = require('./handle/conversation.js');
+var section = require('./handle/section.js');
+var message = require('./handle/message.js');
 
 
 var bodyParser = require('body-parser');
