@@ -38,10 +38,26 @@ app.get('/', function(){
 
 });
 
+
+
+//conversation handleing
+app.post('/addConversation', conversation.addConversation);
+app.get('/conversation/:id', conversation.getConversation);
+app.get('/conversationTitles/:user', conversation.conversationTitles);
+app.delete('/deleteConversation/:id', conversation.deleteConversation);
+
+//section handleing
+app.post('/addSection', section.addSection);
+app.get('/section/:id', section.getSection);
+app.get('/sectionTitles/:conversation', section.sectionTitles);
+app.delete('/deleteSection/:id', section.deleteSection);
+
+
+//message handleing
+app.post('/addMessage', message.addMessage);
+app.get('/messages/:id', message.getMessages);
+app.delete('/deleteMessage/:id', message.deleteMessage);
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
-
-
-app.post('/addConversation', conversation.addConversation);
-
