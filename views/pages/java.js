@@ -207,6 +207,7 @@ function showMessages(){
         document.getElementById("text").style.display = "block";
 
         document.getElementById("send").onclick = addMessage;
+        document.getElementById("messages").innerHTML += "<br><br>"
 
       } else {
       div.appendChild(document.createTextNode(JSON.stringify(ERROR)));
