@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Messages To No One MTNO</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+	 <script src="java.js"></script>
+</head>
+<body > 
+	<h1 id= "title">Conversations</h1>
+	
+	
+	<div id="conversations"></div>
+	<div id="sections"></div>
+	<div id ="messages" class="pull-right"></div>
+	<div class="container">
+	<footer id ="text" style="display: none" class="footer">
+		<form action="/addmessage" method="POST">
+			
+			<input type="text" class="form-control full" name="content">
+			<input type="text" id = "section" name="section" style="display: none;">
+			<button id ="send" class="glyphicon glyphicon-arrow-right btn btn-lg "></button>		
+			
+		</form>
+	</footer>
+	</div>
+	
+
+</body>
+</html>

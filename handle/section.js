@@ -37,16 +37,16 @@ function getSection(request, response){
 }
 
 function sectionTitles(request, response){
-	var section = request.params.section;
+	var conversation = request.params.conversation;
 	response.type("json");
-	console.log("The id of the of section is " + section);
-	if(section){
-		pool.query('SELECT title, section_id FROM section WHERE section_id = $1', [section], (err, res) =>{
+	console.log("The id of the of conversation is " + conversation);
+	if(conversation){
+		pool.query('SELECT title, section_id FROM section WHERE conversation = $1', [conversation], (err, res) =>{
 			if (err){
 				throw err;
 			}
 			console.log(res.rows[0]);
-			response.write(JSON.stringify(res.rows[0]));
+			response.write(JSON.stringify(res.rows));
 			response.end();
 		} )
 	}

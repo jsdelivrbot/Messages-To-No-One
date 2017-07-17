@@ -30,7 +30,7 @@ function getMessages(request, response){
 				throw err;
 			}
 			console.log(res.rows[0]);
-			response.write(JSON.stringify(res.rows[0]));
+			response.write(JSON.stringify(res.rows));
 			response.end();
 		} )
 	}
